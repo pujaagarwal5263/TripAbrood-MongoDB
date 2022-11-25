@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+var router = express_1.default.Router();
+var { addUser, addDestination, addBooking, addTrip, addHotel, addReview, addPreference, getHotels, getDestination, getTrip, getBooking, getReview, getUsers } = require("../controllers/dataController");
+router.get("/getHotels", getHotels);
+router.get("/getDestination", getDestination);
+router.get("/getTrips", getTrip);
+router.get("/getBooking", getBooking);
+router.get("/getReview", getReview);
+router.get("/getUsers", getUsers);
+router.post("/addUser", addUser);
+router.post("/addDestination", addDestination);
+router.post("/addBooking", addBooking);
+router.post("/addTrip", addTrip);
+router.post("/addHotel", addHotel);
+router.post("/addReview", addReview);
+router.post("/addPreference", addPreference);
+module.exports = router;
